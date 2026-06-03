@@ -9,7 +9,6 @@ import re
 import fitz  # PyMuPDF
 from dotenv import load_dotenv
 from huggingface_hub import InferenceClient
-from transformers import pipeline
 
 from flag_human.db import init_db, lookup_shipment
 
@@ -36,6 +35,8 @@ def get_classifier():
     Zero-shot classifier — runs locally on Apple Silicon via MPS.
     Uses facebook/bart-large-mnli (~1.6GB, downloads once).
     """
+    from transformers import pipeline  # lazy import — avoids loading torch until needed
+
     global _classifier
     if _classifier is None:
         print("  Loading classification model (first run downloads ~1.6GB)...")

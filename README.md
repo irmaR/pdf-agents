@@ -1,3 +1,15 @@
+---
+title: Chargeback Dispute Bot
+emoji: 📄
+colorFrom: blue
+colorTo: indigo
+sdk: streamlit
+sdk_version: 1.58.0
+app_file: app.py
+pinned: false
+license: mit
+---
+
 # Chargeback Dispute Bot
 
 Agentic pipeline that processes retailer deduction PDFs and auto-drafts dispute letters — or routes to human review when edge cases are detected.
